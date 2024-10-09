@@ -22,6 +22,7 @@
 		E3C7CD7A2CB6DD7A00B19E3C /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = E3C7CD792CB6DD7A00B19E3C /* FirebaseAppCheck */; };
 		E3C7CD7C2CB6DD7A00B19E3C /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = E3C7CD7B2CB6DD7A00B19E3C /* FirebaseAppDistribution-Beta */; };
 		E3C7CD7E2CB6DDA600B19E3C /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C7CD7D2CB6DDA600B19E3C /* SignInViewController.swift */; };
+		E3C7CD802CB6DE9A00B19E3C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C7CD7F2CB6DE9A00B19E3C /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		E3C7CD692CB6DCED00B19E3C /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		E3C7CD6B2CB6DD0700B19E3C /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		E3C7CD7D2CB6DDA600B19E3C /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		E3C7CD7F2CB6DE9A00B19E3C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				E3C7CD692CB6DCED00B19E3C /* LaunchViewController.swift */,
 				E3C7CD6B2CB6DD0700B19E3C /* LaunchView.swift */,
 				E3C7CD7D2CB6DDA600B19E3C /* SignInViewController.swift */,
+				E3C7CD7F2CB6DE9A00B19E3C /* RegisterViewController.swift */,
 				E3C7CD5E2CB6DC8500B19E3C /* Assets.xcassets */,
 				E3C7CD632CB6DC8500B19E3C /* Info.plist */,
 				E3C7CD5B2CB6DC8100B19E3C /* Instagram.xcdatamodeld */,
@@ -172,6 +175,7 @@
 				E3C7CD7E2CB6DDA600B19E3C /* SignInViewController.swift in Sources */,
 				E3C7CD5D2CB6DC8100B19E3C /* Instagram.xcdatamodeld in Sources */,
 				E3C7CD6C2CB6DD0700B19E3C /* LaunchView.swift in Sources */,
+				E3C7CD802CB6DE9A00B19E3C /* RegisterViewController.swift in Sources */,
 				E3C7CD6A2CB6DCED00B19E3C /* LaunchViewController.swift in Sources */,
 				E3C7CD572CB6DC8100B19E3C /* ViewController.swift in Sources */,
 				E3C7CD532CB6DC8100B19E3C /* AppDelegate.swift in Sources */,
