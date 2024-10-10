@@ -1,5 +1,5 @@
 //
-//  RegisterViewController.swift
+//  SignInViewController.swift
 //  Instagram
 //
 //  Created by Gio's Mac on 09.10.24.
@@ -8,7 +8,8 @@
 import UIKit
 import SnapKit
 
-class RegisterViewController: UIViewController {
+class SignInViewController: UIViewController {
+    private var viewModel = SignInViewModel()
     
     private lazy var instaView: UIView = {
         let view = UIView(frame: .zero)
@@ -47,6 +48,7 @@ class RegisterViewController: UIViewController {
         view.setTitle("Login", for: .normal)
         view.backgroundColor = .blue
         view.layer.cornerRadius = 8
+        view.addTarget(self, action: #selector(pressLoginButton), for: .touchUpInside)
         return view
     }()
     
@@ -63,6 +65,7 @@ class RegisterViewController: UIViewController {
         let view = UIButton(frame: .zero)
         view.setTitle("Sign Up", for: .normal)
         view.setTitleColor(.blue, for: .normal)
+        view.addTarget(self, action: #selector(pressSignUpButton), for: .touchUpInside)
         return view
     }()
     
@@ -148,6 +151,45 @@ class RegisterViewController: UIViewController {
             make.leading.equalTo(questionLabel.snp.trailing).offset(5 * Constraint.xCoeff)
             make.height.equalTo(10 * Constraint.yCoeff)
         }
+    }
+    
+    @objc private func pressLoginButton () {
+        viewModel.pressSignInButton(email: emailTextField.text ?? "", password: passwordTextField.text ?? "") { result in
+            switch result {
+            case .success(let success):
+                let mainVC = MainViewController()
+                self.navigationController?.pushViewController(mainVC, animated: true)
+            case .failure(let error):
+                self.handleLoginError(error)
+            }
+        }
+    }
+    
+    private func handleLoginError(_ error: SignInViewModel.SignInError) {
+        switch error {
+        case .email:
+            let alert = UIAlertController(title: "Sign Up Failed", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        case .password:
+            let alert = UIAlertController(title: "Sign Up Failed", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        case .auth(let string):
+            let alert = UIAlertController(
+                title: "Sign In Failed",
+                message: error.localizedDescription,
+                preferredStyle: .alert
+            )
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    @objc private func pressSignUpButton() {
+        let signUpVC = SignUpViewController()
+        navigationController?.pushViewController(signUpVC, animated: true)
     }
 }
 

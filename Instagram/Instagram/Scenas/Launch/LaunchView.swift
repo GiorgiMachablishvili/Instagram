@@ -14,23 +14,7 @@ class LogoView: UIView {
         view.image = UIImage(named: "InstagramLogo")
         return view
     }()
-    
-//    private lazy var nameLabel: MyLabel = {
-//        let view = MyLabel(frame: .zero)
-//        view.font = UIFont.KoronaOneRegular(size: 20)
-//        view.textAlignment = .center
-//        view.text = "TRAVEL MEMORY"
-//        return view
-//    }()
-//
-//    private lazy var sloganLabel: MyLabel = {
-//        let view = MyLabel(frame: .zero)
-//        view.font = UIFont.KoronaOneRegular(size: 15)
-//        view.textAlignment = .center
-//        view.text = "JOURNAL"
-//        return view
-//    }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -45,25 +29,13 @@ class LogoView: UIView {
     
     private func setup() {
         addSubview(logoImage)
-//        addSubview(nameLabel)
-//        addSubview(sloganLabel)
     }
     
     private func setupConstraints() {
         logoImage.snp.makeConstraints { make in
             make.center.equalToSuperview()
-            make.width.height.equalTo(200)
+            make.height.equalTo(170)
+            make.width.equalTo(200)
         }
-        
-//        nameLabel.snp.makeConstraints { make in
-//            make.top.equalTo(logoImage.snp.bottom).offset(8)
-//            make.leading.trailing.equalToSuperview().inset(20)
-//        }
-//
-//        sloganLabel.snp.makeConstraints { make in
-//            make.top.equalTo(nameLabel.snp.bottom).offset(4)
-//            make.leading.trailing.equalToSuperview().inset(20)
-//            make.bottom.equalToSuperview().offset(-20)
-//        }
     }
 }

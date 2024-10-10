@@ -1,5 +1,5 @@
 //
-//  SignInViewController.swift
+//  SignUpViewController.swift
 //  Instagram
 //
 //  Created by Gio's Mac on 09.10.24.
@@ -7,11 +7,16 @@
 
 import UIKit
 import SnapKit
+import FirebaseAuth
 
-class SignInViewController: UIViewController {
+class SignUpViewController: UIViewController {
+    // ViewModel
+    private var viewModel = SignUpViewModel()
+    
     private lazy var mainImageButton: UIButton = {
         let view = UIButton(frame: .zero)
-        view.setImage(UIImage(named: "uploadImage"), for: .normal)
+        view.setImage(UIImage(named: "plus_photo"), for: .normal)
+        view.addTarget(self, action: #selector(pressMainImageButton), for: .touchUpInside)
         return view
     }()
     
@@ -56,6 +61,7 @@ class SignInViewController: UIViewController {
         view.setTitle("Sign Up", for: .normal)
         view.backgroundColor = .blue
         view.layer.cornerRadius = 8
+        view.addTarget(self, action: #selector(clickSignUpButton), for: .touchUpInside)
         return view
     }()
     
@@ -72,6 +78,7 @@ class SignInViewController: UIViewController {
         let view = UIButton(frame: .zero)
         view.setTitle("Sign In", for: .normal)
         view.setTitleColor(.blue, for: .normal)
+        view.addTarget(self, action: #selector(pressSignInButton), for: .touchUpInside)
         return view
     }()
     
@@ -146,5 +153,85 @@ class SignInViewController: UIViewController {
             make.leading.equalTo(questionLabel.snp.trailing).offset(5 * Constraint.xCoeff)
             make.height.equalTo(10 * Constraint.yCoeff)
         }
+    }
+    
+    @objc private func pressMainImageButton() {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = .photoLibrary // This allows the user to select an image from the photo library (or computer on simulator)
+        imagePickerController.allowsEditing = true // This allows for the image to be cropped if needed
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    @objc private func clickSignUpButton() {
+        guard let selectedImage = mainImageButton.image(for: .normal) else {
+            let alert = UIAlertController(title: "Error", message: "Please select a profile image.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        viewModel.didPressSignInButton(
+            email: emailTextField.text,
+            fullName: fullNameTextField.text,
+            userName: userNameTextField.text,
+            passWord: passwordTextField.text,
+            image: selectedImage
+        ) { [weak self] result in
+            switch result {
+            case.success:
+                let signInVC = MainViewController()
+                self?.navigationController?.pushViewController(signInVC, animated: true)
+            case.failure(let error):
+                self?.handleSignUpError(error)
+            }
+        }
+    }
+    
+    private func handleSignUpError(_ error: SignUpViewModel.SignUpError) {
+        switch error {
+        case .email:
+            let alert = UIAlertController(title: "Sign Up Failed", message: viewModel.emailAlarmMessage, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        case .fullName:
+            let alert = UIAlertController(title: "Sign Up Failed", message: viewModel.fullNameAlarmMessage, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        case .userName:
+            let alert = UIAlertController(title: "Sign Up Failed", message: viewModel.userNameAlarmMessage, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        case .password:
+            let alert = UIAlertController(title: "Sign Up Failed", message: viewModel.passwordAlarmMessage, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        case .auth(let message):
+            let alert = UIAlertController(title: "Sign Up Failed", message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    @objc private func pressSignInButton() {
+        let signInVC = SignInViewController()
+        navigationController?.pushViewController(signInVC, animated: true)
+    }
+}
+
+extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let editedImage = info[.editedImage] as? UIImage {
+            mainImageButton.setImage(editedImage, for: .normal)
+        } else if let originalImage = info[.originalImage] as? UIImage {
+            mainImageButton.setImage(originalImage, for: .normal)
+        }
+        
+        dismiss(animated: true, completion: nil) // Dismiss the image picker once the image is selected
+    }
+    
+    // This method is called if the user cancels the image selection
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil) // Dismiss the picker if the user cancels
     }
 }

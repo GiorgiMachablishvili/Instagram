@@ -25,19 +25,21 @@ class FireBaseManager {
     }
     
     //MARK: Sign Out
-//    func signOut(completion: @escaping (Error?) -> Void) {
-//        do {
-//            try Auth.auth().signOut()
-//            completion(nil)
-//        } catch let signOutError as NSError {
-//            completion(signOutError)
-//        }
-//    }
+    //    func signOut(completion: @escaping (Error?) -> Void) {
+    //        do {
+    //            try Auth.auth().signOut()
+    //            completion(nil)
+    //        } catch let signOutError as NSError {
+    //            completion(signOutError)
+    //        }
+    //    }
     
-    func signOut() async  {
+    func signOut() async throws  {
         do {
             try Auth.auth().signOut()
         } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+            throw signOutError
         }
     }
 }
@@ -62,7 +64,7 @@ extension FireBaseManager {
     /// completion(.success(()))
     /// }
     ///
-    func createAccount(withEmail email: String, password: String, name: String, completion: @escaping(Error?) -> Void) {
+    func createAccount(withEmail email: String, password: String, name: String, image: UIImage, completion: @escaping(Error?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if let error = error {
                 completion(error)
@@ -72,10 +74,24 @@ extension FireBaseManager {
                 changeRequest.commitChanges { error in
                     completion(error)
                 }
+                Task {
+                    do {
+                        try await self.uploadImage(image, forUser: user.uid)
+                        completion(nil)
+                    } catch let uploadError {
+                        completion(uploadError)
+                    }
+                }
             } else {
                 completion(nil)
             }
         }
+    }
+    
+    func uploadImage(_ image: UIImage, forUser userId: String) async throws {
+        guard let imageData = image.jpegData(compressionQuality: 0.8) else { return }
+        let storageRef = Storage.storage().reference().child("profile_images/\(userId).jpg")
+        let _ = try await storageRef.putDataAsync(imageData, metadata: nil)
     }
     
     //MARK: Sign In With Email and Password

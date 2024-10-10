@@ -15,10 +15,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-//        let mainViewController = SignInViewController()
-//        window?.rootViewController = UINavigationController(rootViewController: mainViewController)
-//        window?.makeKeyAndVisible()
-        
         window?.rootViewController = LaunchViewController()
         window?.makeKeyAndVisible()
         UINavigationBar.appearance().tintColor = .black
@@ -33,17 +29,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func mainNavigation() {
-//        if FireBaseManager.shared.isUserLoggedIn() {
+        if FireBaseManager.shared.isUserLoggedIn() {
 //            firebaseManager.fetchJournals {[weak self] journals in
 //                guard (self != nil) else { return }
-                let mainViewController = SignInViewController()
+                let mainVC = MainViewController()
 //                mainViewController.journals = journals
-            self.window?.rootViewController = UINavigationController(rootViewController: mainViewController)
-//            }
-//         } else {
-//             let mainViewController = RegisterViewController()
-//             window?.rootViewController = UINavigationController(rootViewController: mainViewController)
-//         }
+            self.window?.rootViewController = UINavigationController(rootViewController: mainVC)
+            
+         } else {
+             let signInVC = SignInViewController()
+             window?.rootViewController = UINavigationController(rootViewController: signInVC)
+         }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
