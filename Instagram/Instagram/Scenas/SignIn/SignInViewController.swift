@@ -25,23 +25,9 @@ class SignInViewController: UIViewController {
         return view
     }()
     
-    private lazy var emailTextField: UITextField = {
-        let view = UITextField(frame: .zero)
-        view.placeholder = "Email"
-        view.font = UIFont.KoronaOneRegular(size: 15)
-        view.layer.cornerRadius = 8
-        view.backgroundColor = .systemGray6
-        return view
-    }()
+    private let emailTextField = MyTextFieldView(placeholder: "Email", font: UIFont.KoronaOneRegular(size: 15))
     
-    private lazy var passwordTextField: UITextField = {
-        let view = UITextField(frame: .zero)
-        view.placeholder = "Password"
-        view.font = UIFont.KoronaOneRegular(size: 15)
-        view.layer.cornerRadius = 8
-        view.backgroundColor = .systemGray6
-        return view
-    }()
+    private let passwordTextField = MyTextFieldView(placeholder: "Password", font: UIFont.KoronaOneRegular(size: 15), isSecured: true, hasPasswordVisibility: true)
     
     private lazy var logInButton: UIButton = {
         let view = UIButton(frame: .zero)
@@ -116,20 +102,21 @@ class SignInViewController: UIViewController {
         
         mainLabel.snp.remakeConstraints { make in
             make.center.equalTo(instaView.snp.center)
+            make.width.equalTo(250)
             make.height.equalTo(80 * Constraint.yCoeff)
         }
         
         emailTextField.snp.remakeConstraints { make in
             make.top.equalTo(instaView.snp.bottom).offset(30 * Constraint.yCoeff)
-            make.centerX.equalTo(view.snp.centerX)
-            make.width.equalTo(300 * Constraint.xCoeff)
+            make.leading.equalToSuperview().offset(20 * Constraint.xCoeff)
+            make.trailing.equalTo(view.snp.trailing).offset(-10 * Constraint.xCoeff)
             make.height.equalTo(40 * Constraint.yCoeff)
         }
         
         passwordTextField.snp.remakeConstraints { make in
             make.top.equalTo(emailTextField.snp.bottom).offset(30 * Constraint.yCoeff)
-            make.centerX.equalTo(view.snp.centerX)
-            make.width.equalTo(300 * Constraint.xCoeff)
+            make.leading.equalToSuperview().offset(20 * Constraint.xCoeff)
+            make.trailing.equalTo(view.snp.trailing).offset(-10 * Constraint.xCoeff)
             make.height.equalTo(40 * Constraint.yCoeff)
         }
         

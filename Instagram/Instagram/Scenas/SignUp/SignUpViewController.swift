@@ -12,6 +12,9 @@ import FirebaseAuth
 class SignUpViewController: UIViewController {
     // ViewModel
     private var viewModel = SignUpViewModel()
+    private var imagePicker: ImagePickerUtility!
+    
+    var selectedImage: UIImage?
     
     private lazy var mainImageButton: UIButton = {
         let view = UIButton(frame: .zero)
@@ -20,41 +23,13 @@ class SignUpViewController: UIViewController {
         return view
     }()
     
-    private lazy var emailTextField: UITextField = {
-        let view = UITextField(frame: .zero)
-        view.placeholder = "Email"
-        view.font = UIFont.KoronaOneRegular(size: 15)
-        view.layer.cornerRadius = 8
-        view.backgroundColor = .systemGray6
-        return view
-    }()
+    private let emailTextField = MyTextFieldView(placeholder: "Email", font: UIFont.KoronaOneRegular(size: 15))
     
-    private lazy var fullNameTextField: UITextField = {
-        let view = UITextField(frame: .zero)
-        view.placeholder = "Full Name"
-        view.font = UIFont.KoronaOneRegular(size: 15)
-        view.layer.cornerRadius = 8
-        view.backgroundColor = .systemGray6
-        return view
-    }()
+    private let fullNameTextField = MyTextFieldView(placeholder: "Full Name", font: UIFont.KoronaOneRegular(size: 15))
     
-    private lazy var userNameTextField: UITextField = {
-        let view = UITextField(frame: .zero)
-        view.placeholder = "User Name"
-        view.font = UIFont.KoronaOneRegular(size: 15)
-        view.layer.cornerRadius = 8
-        view.backgroundColor = .systemGray6
-        return view
-    }()
+    private let userNameTextField = MyTextFieldView(placeholder: "User Name", font: UIFont.KoronaOneRegular(size: 15))
     
-    private lazy var passwordTextField: UITextField = {
-        let view = UITextField(frame: .zero)
-        view.placeholder = "Password"
-        view.font = UIFont.KoronaOneRegular(size: 15)
-        view.layer.cornerRadius = 8
-        view.backgroundColor = .systemGray6
-        return view
-    }()
+    private let passwordTextField = MyTextFieldView(placeholder: "Password", font: UIFont.KoronaOneRegular(size: 15), isSecured: true, hasPasswordVisibility: true)
     
     private lazy var signupButton: UIButton = {
         let view = UIButton(frame: .zero)
@@ -87,6 +62,7 @@ class SignUpViewController: UIViewController {
         setup()
         setupConstraints()
         view.backgroundColor = .systemBackground
+        imagePicker = ImagePickerUtility(presentationController: self)
     }
     
     private func setup() {
@@ -109,36 +85,36 @@ class SignUpViewController: UIViewController {
         
         emailTextField.snp.remakeConstraints { make in
             make.top.equalTo(mainImageButton.snp.bottom).offset(10 * Constraint.yCoeff)
-            make.centerX.equalTo(view.snp.centerX)
-            make.width.equalTo(300 * Constraint.xCoeff)
+            make.leading.equalToSuperview().offset(20 * Constraint.xCoeff)
+            make.trailing.equalTo(view.snp.trailing).offset(-10 * Constraint.xCoeff)
             make.height.equalTo(40 * Constraint.yCoeff)
         }
         
         fullNameTextField.snp.remakeConstraints { make in
             make.top.equalTo(emailTextField.snp.bottom).offset(10 * Constraint.yCoeff)
-            make.centerX.equalTo(view.snp.centerX)
-            make.width.equalTo(300 * Constraint.xCoeff)
+            make.leading.equalToSuperview().offset(20 * Constraint.xCoeff)
+            make.trailing.equalTo(view.snp.trailing).offset(-10 * Constraint.xCoeff)
             make.height.equalTo(40 * Constraint.yCoeff)
         }
         
         userNameTextField.snp.remakeConstraints { make in
             make.top.equalTo(fullNameTextField.snp.bottom).offset(10 * Constraint.yCoeff)
-            make.centerX.equalTo(view.snp.centerX)
-            make.width.equalTo(300 * Constraint.xCoeff)
+            make.leading.equalToSuperview().offset(20 * Constraint.xCoeff)
+            make.trailing.equalTo(view.snp.trailing).offset(-10 * Constraint.xCoeff)
             make.height.equalTo(40 * Constraint.yCoeff)
         }
         
         passwordTextField.snp.remakeConstraints { make in
             make.top.equalTo(userNameTextField.snp.bottom).offset(10 * Constraint.yCoeff)
-            make.centerX.equalTo(view.snp.centerX)
-            make.width.equalTo(300 * Constraint.xCoeff)
+            make.leading.equalToSuperview().offset(20 * Constraint.xCoeff)
+            make.trailing.equalTo(view.snp.trailing).offset(-10 * Constraint.xCoeff)
             make.height.equalTo(40 * Constraint.yCoeff)
         }
         
         signupButton.snp.remakeConstraints { make in
             make.top.equalTo(passwordTextField.snp.bottom).offset(25 * Constraint.yCoeff)
             make.centerX.equalTo(view.snp.centerX)
-            make.width.equalTo(270 * Constraint.xCoeff)
+            make.leading.trailing.equalToSuperview().inset(25 * Constraint.xCoeff)
             make.height.equalTo(40 * Constraint.yCoeff)
         }
         
@@ -156,11 +132,12 @@ class SignUpViewController: UIViewController {
     }
     
     @objc private func pressMainImageButton() {
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.delegate = self
-        imagePickerController.sourceType = .photoLibrary // This allows the user to select an image from the photo library (or computer on simulator)
-        imagePickerController.allowsEditing = true // This allows for the image to be cropped if needed
-        present(imagePickerController, animated: true, completion: nil)
+        imagePicker.present { [weak self] image in
+            if let image = image {
+                self?.selectedImage = image
+//                self?.selectedPhotoLabel.text = "Selected!"
+            }
+        }
     }
     
     @objc private func clickSignUpButton() {
@@ -216,22 +193,5 @@ class SignUpViewController: UIViewController {
     @objc private func pressSignInButton() {
         let signInVC = SignInViewController()
         navigationController?.pushViewController(signInVC, animated: true)
-    }
-}
-
-extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let editedImage = info[.editedImage] as? UIImage {
-            mainImageButton.setImage(editedImage, for: .normal)
-        } else if let originalImage = info[.originalImage] as? UIImage {
-            mainImageButton.setImage(originalImage, for: .normal)
-        }
-        
-        dismiss(animated: true, completion: nil) // Dismiss the image picker once the image is selected
-    }
-    
-    // This method is called if the user cancels the image selection
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil) // Dismiss the picker if the user cancels
     }
 }

@@ -29,17 +29,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func mainNavigation() {
-        if FireBaseManager.shared.isUserLoggedIn() {
+//        if FireBaseManager.shared.isUserLoggedIn() {
 //            firebaseManager.fetchJournals {[weak self] journals in
 //                guard (self != nil) else { return }
-                let mainVC = MainViewController()
+//                let mainVC = MainViewController()
 //                mainViewController.journals = journals
-            self.window?.rootViewController = UINavigationController(rootViewController: mainVC)
+//            self.window?.rootViewController = UINavigationController(rootViewController: mainVC)
             
-         } else {
+//         } else {
              let signInVC = SignInViewController()
              window?.rootViewController = UINavigationController(rootViewController: signInVC)
-         }
+//         }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

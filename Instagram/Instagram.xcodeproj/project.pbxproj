@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E33D2E772CB907AB00E10B10 /* ImagePickerUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D2E762CB907AB00E10B10 /* ImagePickerUtility.swift */; };
+		E33D2E7F2CB91FC200E10B10 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D2E7E2CB91FC200E10B10 /* HomeViewController.swift */; };
+		E33D2E812CB91FD100E10B10 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D2E802CB91FD100E10B10 /* SearchViewController.swift */; };
+		E33D2E832CB91FDB00E10B10 /* PlusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D2E822CB91FDB00E10B10 /* PlusViewController.swift */; };
+		E33D2E852CB91FE500E10B10 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D2E842CB91FE500E10B10 /* VideoViewController.swift */; };
+		E33D2E872CB91FF300E10B10 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D2E862CB91FF300E10B10 /* ProfileViewController.swift */; };
 		E3B3F9512CB84CED001933BC /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B3F9502CB84CED001933BC /* SignUpViewModel.swift */; };
 		E3B3F9542CB85CB4001933BC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B3F9532CB85CB4001933BC /* MainViewController.swift */; };
 		E3B3F9562CB85D70001933BC /* MainBottomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B3F9552CB85D70001933BC /* MainBottomButtonView.swift */; };
@@ -76,6 +82,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E33D2E762CB907AB00E10B10 /* ImagePickerUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerUtility.swift; sourceTree = "<group>"; };
+		E33D2E7E2CB91FC200E10B10 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E33D2E802CB91FD100E10B10 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		E33D2E822CB91FDB00E10B10 /* PlusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusViewController.swift; sourceTree = "<group>"; };
+		E33D2E842CB91FE500E10B10 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		E33D2E862CB91FF300E10B10 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E3B3F9502CB84CED001933BC /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		E3B3F9532CB85CB4001933BC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E3B3F9552CB85D70001933BC /* MainBottomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBottomButtonView.swift; sourceTree = "<group>"; };
@@ -144,11 +156,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E3B3F9522CB85C88001933BC /* MainView */ = {
+		E33D2E752CB9077700E10B10 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E33D2E762CB907AB00E10B10 /* ImagePickerUtility.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E33D2E782CB91EFC00E10B10 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E33D2E7E2CB91FC200E10B10 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E33D2E792CB91F1500E10B10 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				E33D2E802CB91FD100E10B10 /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		E33D2E7A2CB91F2800E10B10 /* Plus */ = {
+			isa = PBXGroup;
+			children = (
+				E33D2E822CB91FDB00E10B10 /* PlusViewController.swift */,
+			);
+			path = Plus;
+			sourceTree = "<group>";
+		};
+		E33D2E7B2CB91F4700E10B10 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				E3B3F9532CB85CB4001933BC /* MainViewController.swift */,
 				E3B3F9552CB85D70001933BC /* MainBottomButtonView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		E33D2E7C2CB91F5700E10B10 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				E33D2E842CB91FE500E10B10 /* VideoViewController.swift */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		E33D2E7D2CB91F6B00E10B10 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E33D2E862CB91FF300E10B10 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		E3B3F9522CB85C88001933BC /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				E33D2E7B2CB91F4700E10B10 /* Main */,
+				E33D2E782CB91EFC00E10B10 /* Home */,
+				E33D2E792CB91F1500E10B10 /* Search */,
+				E33D2E7A2CB91F2800E10B10 /* Plus */,
+				E33D2E7C2CB91F5700E10B10 /* Video */,
+				E33D2E7D2CB91F6B00E10B10 /* Profile */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -179,6 +252,7 @@
 				E3C7CD8A2CB6E13B00B19E3C /* Constraints */,
 				E3C7CDD22CB6ED9E00B19E3C /* Models */,
 				E3C7CDD12CB6ED8A00B19E3C /* Extanttion */,
+				E33D2E752CB9077700E10B10 /* Utils */,
 				E3C7CD832CB6E06600B19E3C /* Fonts */,
 				E3C7CDCF2CB6EC6800B19E3C /* Assets.xcassets */,
 				E3C7CD632CB6DC8500B19E3C /* Info.plist */,
@@ -400,8 +474,10 @@
 				E3C7CD7E2CB6DDA600B19E3C /* SignUpViewController.swift in Sources */,
 				E3B3F9562CB85D70001933BC /* MainBottomButtonView.swift in Sources */,
 				E3C7CD5D2CB6DC8100B19E3C /* Instagram.xcdatamodeld in Sources */,
+				E33D2E772CB907AB00E10B10 /* ImagePickerUtility.swift in Sources */,
 				E3C7CDC72CB6E35500B19E3C /* MyTextFiledView.swift in Sources */,
 				E3C7CD8C2CB6E14B00B19E3C /* Constraints.swift in Sources */,
+				E33D2E872CB91FF300E10B10 /* ProfileViewController.swift in Sources */,
 				E3C7CD6C2CB6DD0700B19E3C /* LaunchView.swift in Sources */,
 				E3C7CD802CB6DE9A00B19E3C /* SignInViewController.swift in Sources */,
 				E3C7CDD42CB6EDB000B19E3C /* User.swift in Sources */,
@@ -410,7 +486,11 @@
 				E3C7CD6A2CB6DCED00B19E3C /* LaunchViewController.swift in Sources */,
 				E3C7CD8F2CB6E17200B19E3C /* ThemManager.swift in Sources */,
 				E3C7CD912CB6E17F00B19E3C /* FireBaseManager.swift in Sources */,
+				E33D2E832CB91FDB00E10B10 /* PlusViewController.swift in Sources */,
 				E3C7CD532CB6DC8100B19E3C /* AppDelegate.swift in Sources */,
+				E33D2E812CB91FD100E10B10 /* SearchViewController.swift in Sources */,
+				E33D2E7F2CB91FC200E10B10 /* HomeViewController.swift in Sources */,
+				E33D2E852CB91FE500E10B10 /* VideoViewController.swift in Sources */,
 				E3B3F9582CB8621C001933BC /* SignInViewModel.swift in Sources */,
 				E3C7CD822CB6DFAF00B19E3C /* UIFont+Extantion.swift in Sources */,
 				E3C7CDC92CB6E35F00B19E3C /* MyLabel.swift in Sources */,

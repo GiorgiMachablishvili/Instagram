@@ -9,19 +9,14 @@ import UIKit
 import SnapKit
 
 class MyTextFieldView: UIView {
-    private lazy var labelView: MyLabel = {
-        let view = MyLabel(frame: .zero)
-        view.textAlignment = .left
-        view.textColor = .black
-        view.backgroundColor = .lightGray
-        return view
-    }()
-    
+    // Only textField and visibilityToggleButton, no label.
     private lazy var textField: UITextField = {
         let view = UITextField(frame: .zero)
         view.font = UIFont.KoronaOneRegular(size: 15)
         view.backgroundColor = .clear
         view.layer.cornerRadius = 8
+        view.backgroundColor = .systemGray6
+        view.placeholder = placeholderText
         return view
     }()
     
@@ -35,6 +30,7 @@ class MyTextFieldView: UIView {
     }()
     
     private var isSecured: Bool = false
+    private var placeholderText: String?
     
     var text: String {
         get {
@@ -46,11 +42,11 @@ class MyTextFieldView: UIView {
     }
     
     public var inputTextField: UITextField {
-            return textField
-        }
+        return textField
+    }
     
     init(
-        label: String,
+        placeholder: String? = nil,
         font: UIFont = UIFont.KoronaOneRegular(size: 15),
         isSecured: Bool = false,
         hasPasswordVisibility: Bool = false
@@ -58,12 +54,11 @@ class MyTextFieldView: UIView {
         super.init(frame: .zero)
         
         self.isSecured = isSecured
+        self.placeholderText = placeholder
         
         setupHierarchy()
         setupConstraints()
         
-        labelView.text = label
-        labelView.font = font
         textField.isSecureTextEntry = isSecured
         visibilityToggleButton.isHidden = !hasPasswordVisibility
         
@@ -84,7 +79,6 @@ class MyTextFieldView: UIView {
     }
     
     private func setupHierarchy() {
-        addSubview(labelView)
         addSubview(textField)
         addSubview(visibilityToggleButton)
     }
@@ -94,32 +88,21 @@ class MyTextFieldView: UIView {
     }
     
     func clearText() {
-            textField.text = ""
-        }
+        textField.text = ""
+    }
     
     private func setupConstraints() {
-        labelView.snp.remakeConstraints { make in
-            make.leading.equalTo(self.snp.leading).offset(0)
-            make.bottom.equalTo(self.snp.bottom)
-            make.top.equalTo(self.snp.top)
-            make.height.equalTo(22)
-            make.width.equalTo(160)
-        }
-        
         visibilityToggleButton.snp.makeConstraints { make in
             make.centerY.equalTo(textField.snp.centerY)
-            make.trailing.equalTo(self.snp.trailing).offset(-5)
-            make.width.height.equalTo(22)
+            make.trailing.equalTo(self.snp.trailing).offset(-5 * Constraint.xCoeff)
+            make.width.height.equalTo(22 * Constraint.xCoeff)
         }
         
         textField.snp.remakeConstraints { make in
-            make.width.equalTo(self.snp.width).multipliedBy(0.70)
-            make.leading.equalTo(labelView.snp.trailing).offset(10)
-            make.bottom.equalTo(self.snp.bottom)
-            make.top.equalTo(self.snp.top)
+            make.leading.equalTo(self.snp.leading).offset(15 * Constraint.xCoeff)
+            make.trailing.equalTo(visibilityToggleButton.snp.leading).offset(-5 * Constraint.xCoeff)
+            make.top.bottom.equalTo(self)
         }
-        
-
     }
     
     private func setupPasswordVisibilityToggle() {
@@ -134,4 +117,3 @@ class MyTextFieldView: UIView {
         visibilityToggleButton.setImage(UIImage(systemName: imageName), for: .normal)
     }
 }
-
