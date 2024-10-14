@@ -8,22 +8,46 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    private let fireBaseManager = FireBaseManager.shared
+    
+    private lazy var logOutButton: UIButton = {
+        let view = UIButton(frame: .zero)
+        view.setTitle("Back", for: .normal)
+        view.setTitleColor(.black, for: .normal)
+        view.addTarget(self, action: #selector(pressLogOutButton), for: .touchUpInside)
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .red
+        view.addSubview(logOutButton)
+        
+        logOutButton.snp.remakeConstraints { make in
+            make.top.equalTo(view.snp.top).offset(100)
+            make.leading.equalTo(view.snp.leading).offset(20)
+            make.height.width.equalTo(40)
+        }
+
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func pressLogOutButton() {
+        Task {
+            do {
+                try await fireBaseManager.signOut()
+                navigateToSignInViewController()
+            } catch {
+                print("Failed to sign out: \(error)")
+            }
+        }
+        print("pressed")
     }
-    */
+    
+    private func navigateToSignInViewController() {
+        let signInVC = SignInViewController()
+        let navigationController = UINavigationController(rootViewController: signInVC)
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.window?.rootViewController = navigationController
+    }
 
 }

@@ -6,24 +6,73 @@
 //
 
 import UIKit
+import SnapKit
+import FirebaseAuth
 
 class ProfileViewController: UIViewController {
-
+    private let profileItems: [ProfileData] = [
+        .init(userImage: UIImage(systemName: "circle.square"), posts: "25\npost", followers: "12\nfollowers", following: "13" + "\n" + "following", userName: "Test user")
+    ]
+    
+    private lazy var topView: ProfileView = {
+        let view = ProfileView(frame: .zero)
+        return view
+    }()
+    
+    private lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: 200, height: 160)
+        layout.minimumLineSpacing = 15
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        collectionView.register(ProfileCollectionViewCell.self, forCellWithReuseIdentifier: "ProfileCollectionViewCell")
+        return collectionView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.navigationItem.leftBarButtonItem = nil
+        setup()
+        setupConstraints()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setup() {
+        view.addSubview(topView)
+        view.addSubview(collectionView)
     }
-    */
+    
+    private func setupConstraints() {
+        topView.snp.remakeConstraints { make in
+            make.leading.top.trailing.equalToSuperview()
+            make.height.equalTo(70)
+        }
+        
+        collectionView.snp.remakeConstraints { make in
+            make.top.equalTo(topView.snp.bottom).offset(10)
+            make.leading.trailing.equalToSuperview().inset(10)
+            make.height.equalToSuperview()
+        }
+    }
+    
+}
 
+extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return profileItems.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfileCollectionViewCell", for: indexPath) as? ProfileCollectionViewCell else {
+                   return UICollectionViewCell()
+               }
+        let profileData = profileItems[indexPath.item]
+        cell.configure(with: profileData)
+        return cell
+    }
+    
+    
 }

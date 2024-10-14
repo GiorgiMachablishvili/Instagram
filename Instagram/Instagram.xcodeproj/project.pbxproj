@@ -66,6 +66,9 @@
 		E3C7CDCD2CB6E96F00B19E3C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3C7CDCC2CB6E96F00B19E3C /* GoogleService-Info.plist */; };
 		E3C7CDD02CB6EC6800B19E3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3C7CDCF2CB6EC6800B19E3C /* Assets.xcassets */; };
 		E3C7CDD42CB6EDB000B19E3C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C7CDD32CB6EDB000B19E3C /* User.swift */; };
+		E3DC37A32CBD0A63000633A4 /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DC37A22CBD0A63000633A4 /* ProfileData.swift */; };
+		E3EAFF412CBB265A00D55457 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EAFF402CBB265A00D55457 /* ProfileView.swift */; };
+		E3EAFF462CBB33D500D55457 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EAFF452CBB33D500D55457 /* ProfileCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -113,6 +116,9 @@
 		E3C7CDCC2CB6E96F00B19E3C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E3C7CDCF2CB6EC6800B19E3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3C7CDD32CB6EDB000B19E3C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E3DC37A22CBD0A63000633A4 /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
+		E3EAFF402CBB265A00D55457 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		E3EAFF452CBB33D500D55457 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +215,8 @@
 			isa = PBXGroup;
 			children = (
 				E33D2E862CB91FF300E10B10 /* ProfileViewController.swift */,
+				E3EAFF452CBB33D500D55457 /* ProfileCollectionViewCell.swift */,
+				E3EAFF402CBB265A00D55457 /* ProfileView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -249,8 +257,8 @@
 				E3C7CDC52CB6E34400B19E3C /* Components */,
 				E3C7CD932CB6E1FF00B19E3C /* Scenas */,
 				E3C7CD8D2CB6E16100B19E3C /* Managers */,
-				E3C7CD8A2CB6E13B00B19E3C /* Constraints */,
 				E3C7CDD22CB6ED9E00B19E3C /* Models */,
+				E3C7CD8A2CB6E13B00B19E3C /* Constraints */,
 				E3C7CDD12CB6ED8A00B19E3C /* Extanttion */,
 				E33D2E752CB9077700E10B10 /* Utils */,
 				E3C7CD832CB6E06600B19E3C /* Fonts */,
@@ -339,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				E3C7CDD32CB6EDB000B19E3C /* User.swift */,
+				E3DC37A22CBD0A63000633A4 /* ProfileData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -478,8 +487,11 @@
 				E3C7CDC72CB6E35500B19E3C /* MyTextFiledView.swift in Sources */,
 				E3C7CD8C2CB6E14B00B19E3C /* Constraints.swift in Sources */,
 				E33D2E872CB91FF300E10B10 /* ProfileViewController.swift in Sources */,
+				E3EAFF412CBB265A00D55457 /* ProfileView.swift in Sources */,
+				E3EAFF462CBB33D500D55457 /* ProfileCollectionViewCell.swift in Sources */,
 				E3C7CD6C2CB6DD0700B19E3C /* LaunchView.swift in Sources */,
 				E3C7CD802CB6DE9A00B19E3C /* SignInViewController.swift in Sources */,
+				E3DC37A32CBD0A63000633A4 /* ProfileData.swift in Sources */,
 				E3C7CDD42CB6EDB000B19E3C /* User.swift in Sources */,
 				E3B3F9542CB85CB4001933BC /* MainViewController.swift in Sources */,
 				E3B3F9512CB84CED001933BC /* SignUpViewModel.swift in Sources */,
