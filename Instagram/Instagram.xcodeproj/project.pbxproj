@@ -13,6 +13,10 @@
 		E33D2E832CB91FDB00E10B10 /* PlusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D2E822CB91FDB00E10B10 /* PlusViewController.swift */; };
 		E33D2E852CB91FE500E10B10 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D2E842CB91FE500E10B10 /* VideoViewController.swift */; };
 		E33D2E872CB91FF300E10B10 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D2E862CB91FF300E10B10 /* ProfileViewController.swift */; };
+		E36618DD2CBEA28A007CBD77 /* ProfileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36618DC2CBEA28A007CBD77 /* ProfileViewCell.swift */; };
+		E36618DF2CBEA872007CBD77 /* PostFollowersViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36618DE2CBEA872007CBD77 /* PostFollowersViewCell.swift */; };
+		E36618E12CBEAC9C007CBD77 /* EditProfileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36618E02CBEAC9C007CBD77 /* EditProfileViewCell.swift */; };
+		E36618E32CBEAED9007CBD77 /* BarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36618E22CBEAED9007CBD77 /* BarViewCell.swift */; };
 		E3B3F9512CB84CED001933BC /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B3F9502CB84CED001933BC /* SignUpViewModel.swift */; };
 		E3B3F9542CB85CB4001933BC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B3F9532CB85CB4001933BC /* MainViewController.swift */; };
 		E3B3F9562CB85D70001933BC /* MainBottomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B3F9552CB85D70001933BC /* MainBottomButtonView.swift */; };
@@ -67,8 +71,6 @@
 		E3C7CDD02CB6EC6800B19E3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3C7CDCF2CB6EC6800B19E3C /* Assets.xcassets */; };
 		E3C7CDD42CB6EDB000B19E3C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C7CDD32CB6EDB000B19E3C /* User.swift */; };
 		E3DC37A32CBD0A63000633A4 /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DC37A22CBD0A63000633A4 /* ProfileData.swift */; };
-		E3EAFF412CBB265A00D55457 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EAFF402CBB265A00D55457 /* ProfileView.swift */; };
-		E3EAFF462CBB33D500D55457 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EAFF452CBB33D500D55457 /* ProfileCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -91,6 +93,10 @@
 		E33D2E822CB91FDB00E10B10 /* PlusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusViewController.swift; sourceTree = "<group>"; };
 		E33D2E842CB91FE500E10B10 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		E33D2E862CB91FF300E10B10 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E36618DC2CBEA28A007CBD77 /* ProfileViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewCell.swift; sourceTree = "<group>"; };
+		E36618DE2CBEA872007CBD77 /* PostFollowersViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostFollowersViewCell.swift; sourceTree = "<group>"; };
+		E36618E02CBEAC9C007CBD77 /* EditProfileViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewCell.swift; sourceTree = "<group>"; };
+		E36618E22CBEAED9007CBD77 /* BarViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarViewCell.swift; sourceTree = "<group>"; };
 		E3B3F9502CB84CED001933BC /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		E3B3F9532CB85CB4001933BC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E3B3F9552CB85D70001933BC /* MainBottomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBottomButtonView.swift; sourceTree = "<group>"; };
@@ -117,8 +123,6 @@
 		E3C7CDCF2CB6EC6800B19E3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3C7CDD32CB6EDB000B19E3C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E3DC37A22CBD0A63000633A4 /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
-		E3EAFF402CBB265A00D55457 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		E3EAFF452CBB33D500D55457 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,8 +219,10 @@
 			isa = PBXGroup;
 			children = (
 				E33D2E862CB91FF300E10B10 /* ProfileViewController.swift */,
-				E3EAFF452CBB33D500D55457 /* ProfileCollectionViewCell.swift */,
-				E3EAFF402CBB265A00D55457 /* ProfileView.swift */,
+				E36618DC2CBEA28A007CBD77 /* ProfileViewCell.swift */,
+				E36618DE2CBEA872007CBD77 /* PostFollowersViewCell.swift */,
+				E36618E02CBEAC9C007CBD77 /* EditProfileViewCell.swift */,
+				E36618E22CBEAED9007CBD77 /* BarViewCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -487,14 +493,15 @@
 				E3C7CDC72CB6E35500B19E3C /* MyTextFiledView.swift in Sources */,
 				E3C7CD8C2CB6E14B00B19E3C /* Constraints.swift in Sources */,
 				E33D2E872CB91FF300E10B10 /* ProfileViewController.swift in Sources */,
-				E3EAFF412CBB265A00D55457 /* ProfileView.swift in Sources */,
-				E3EAFF462CBB33D500D55457 /* ProfileCollectionViewCell.swift in Sources */,
 				E3C7CD6C2CB6DD0700B19E3C /* LaunchView.swift in Sources */,
 				E3C7CD802CB6DE9A00B19E3C /* SignInViewController.swift in Sources */,
+				E36618E12CBEAC9C007CBD77 /* EditProfileViewCell.swift in Sources */,
 				E3DC37A32CBD0A63000633A4 /* ProfileData.swift in Sources */,
 				E3C7CDD42CB6EDB000B19E3C /* User.swift in Sources */,
 				E3B3F9542CB85CB4001933BC /* MainViewController.swift in Sources */,
+				E36618DF2CBEA872007CBD77 /* PostFollowersViewCell.swift in Sources */,
 				E3B3F9512CB84CED001933BC /* SignUpViewModel.swift in Sources */,
+				E36618E32CBEAED9007CBD77 /* BarViewCell.swift in Sources */,
 				E3C7CD6A2CB6DCED00B19E3C /* LaunchViewController.swift in Sources */,
 				E3C7CD8F2CB6E17200B19E3C /* ThemManager.swift in Sources */,
 				E3C7CD912CB6E17F00B19E3C /* FireBaseManager.swift in Sources */,
@@ -504,6 +511,7 @@
 				E33D2E7F2CB91FC200E10B10 /* HomeViewController.swift in Sources */,
 				E33D2E852CB91FE500E10B10 /* VideoViewController.swift in Sources */,
 				E3B3F9582CB8621C001933BC /* SignInViewModel.swift in Sources */,
+				E36618DD2CBEA28A007CBD77 /* ProfileViewCell.swift in Sources */,
 				E3C7CD822CB6DFAF00B19E3C /* UIFont+Extantion.swift in Sources */,
 				E3C7CDC92CB6E35F00B19E3C /* MyLabel.swift in Sources */,
 				E3C7CD552CB6DC8100B19E3C /* SceneDelegate.swift in Sources */,

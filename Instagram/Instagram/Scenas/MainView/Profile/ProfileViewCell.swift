@@ -1,15 +1,15 @@
 //
-//  ProfileView.swift
+//  ProfileViewCell.swift
 //  Instagram
 //
-//  Created by Gio's Mac on 13.10.24.
+//  Created by Gio's Mac on 15.10.24.
 //
 
 import UIKit
 import SnapKit
 import FirebaseAuth
 
-class ProfileView: UIView {
+class ProfileViewCell: UICollectionViewCell {
     private lazy var nameButton: UIButton = {
         let view = UIButton(type: .system)
                 
@@ -87,7 +87,7 @@ class ProfileView: UIView {
     
     private func setupConstraint() {
         nameButton.snp.remakeConstraints { make in
-            make.top.equalTo(snp.top).offset(50)
+            make.top.equalTo(snp.top)
             make.leading.equalTo(snp.leading)
             make.height.equalTo(50)
             make.width.equalTo(200)
@@ -111,5 +111,4 @@ class ProfileView: UIView {
             make.height.width.equalTo(25)
         }
     }
-    
 }
