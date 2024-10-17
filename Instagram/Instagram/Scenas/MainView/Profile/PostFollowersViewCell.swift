@@ -64,32 +64,32 @@ class PostFollowersViewCell: UICollectionViewCell {
     private func setupConstraints() {
         userImage.snp.remakeConstraints { make in
             make.top.equalTo(snp.top)
-            make.leading.equalTo(snp.leading).offset(5)
-            make.height.width.equalTo(100)
+            make.leading.equalTo(snp.leading).offset(5 * Constraint.xCoeff)
+            make.height.width.equalTo(100 * Constraint.yCoeff)
         }
         
         postLabel.snp.remakeConstraints { make in
             make.centerY.equalTo(userImage.snp.centerY)
-            make.leading.equalTo(userImage.snp.trailing).offset(15)
-            make.height.equalTo(50)
+            make.leading.equalTo(userImage.snp.trailing).offset(15 * Constraint.xCoeff)
+            make.height.equalTo(50 * Constraint.yCoeff)
         }
         
         followersLabel.snp.remakeConstraints { make in
             make.centerY.equalTo(userImage.snp.centerY)
-            make.leading.equalTo(postLabel.snp.trailing).offset(25)
-            make.height.equalTo(50)
+            make.leading.equalTo(postLabel.snp.trailing).offset(25 * Constraint.xCoeff)
+            make.height.equalTo(50 * Constraint.yCoeff)
         }
         
         followingLabel.snp.remakeConstraints { make in
             make.centerY.equalTo(userImage.snp.centerY)
-            make.leading.equalTo(followersLabel.snp.trailing).offset(25)
-            make.height.equalTo(50)
+            make.leading.equalTo(followersLabel.snp.trailing).offset(25 * Constraint.xCoeff)
+            make.height.equalTo(50 * Constraint.yCoeff)
         }
         
         userName.snp.remakeConstraints { make in
-            make.top.equalTo(userImage.snp.bottom).offset(15)
-            make.leading.equalTo(snp.leading).offset(25)
-            make.height.equalTo(20)
+            make.top.equalTo(userImage.snp.bottom).offset(15 * Constraint.xCoeff)
+            make.leading.equalTo(snp.leading).offset(25 * Constraint.xCoeff)
+            make.height.equalTo(20 * Constraint.yCoeff)
         }
     }
     

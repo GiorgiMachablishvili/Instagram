@@ -10,37 +10,21 @@ import SnapKit
 import FirebaseAuth
 
 class ProfileViewCell: UICollectionViewCell {
-    private lazy var nameButton: UIButton = {
-        let view = UIButton(type: .system)
-                
-        // Create the left image
-        let leftImageView = UIImageView(image: UIImage(systemName: "bag"))
-        leftImageView.contentMode = .scaleAspectFit
-        leftImageView.tintColor = .black
-                
-        // Create the right image
-        let rightImageView = UIImageView(image: UIImage(systemName: "arrow.down"))
-        rightImageView.contentMode = .scaleAspectFit
-        rightImageView.tintColor = .black
-         
-        // Create a label for the button title
-        let titleLabel = UILabel()
+    
+    weak var delegate: ProfileViewCellDelegate?
+    private lazy var nameButton: CustomButton = {
+        let userName: String
         if let user = Auth.auth().currentUser {
-            let userName = user.displayName ?? "User"
-            titleLabel.text = userName
+            userName = user.displayName ?? "User"
         } else {
-            titleLabel.text = "Welcome"
+            userName = "Welcome"
         }
-        // Create a horizontal stack view to hold the images and title
-        let hStack = UIStackView(arrangedSubviews: [leftImageView, titleLabel, rightImageView])
-        hStack.axis = .horizontal
-        hStack.spacing = 5
-        hStack.alignment = .center
-        view.addSubview(hStack)
         
-        hStack.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(5)
-        }
+        let view = CustomButton(
+            leftImage: UIImage(systemName: "bag"),
+            title: userName,
+            rightImage: UIImage(systemName: "arrow.down")
+        )
         return view
     }()
     
@@ -65,9 +49,10 @@ class ProfileViewCell: UICollectionViewCell {
         view.setImage(UIImage(named: "menuIcon"), for: .normal)
         view.contentMode = .scaleAspectFill
         view.tintColor = .black
+        view.addTarget(self, action: #selector(pressedMenuBar), for: .touchUpInside)
         return view
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -89,26 +74,30 @@ class ProfileViewCell: UICollectionViewCell {
         nameButton.snp.remakeConstraints { make in
             make.top.equalTo(snp.top)
             make.leading.equalTo(snp.leading)
-            make.height.equalTo(50)
-            make.width.equalTo(200)
+            make.height.equalTo(50 * Constraint.yCoeff)
+            make.width.equalTo(200 * Constraint.xCoeff)
         }
         
         threadsButton.snp.remakeConstraints { make in
             make.centerY.equalTo(nameButton.snp.centerY)
-            make.trailing.equalTo(addButton.snp.leading).offset(-30)
-            make.height.width.equalTo(25)
+            make.trailing.equalTo(addButton.snp.leading).offset(-30 * Constraint.xCoeff)
+            make.height.width.equalTo(25 * Constraint.yCoeff)
         }
         
         addButton.snp.remakeConstraints { make in
             make.centerY.equalTo(nameButton.snp.centerY)
-            make.trailing.equalTo(menuButton.snp.leading).offset(-30)
-            make.height.width.equalTo(25)
+            make.trailing.equalTo(menuButton.snp.leading).offset(-30 * Constraint.xCoeff)
+            make.height.width.equalTo(25 * Constraint.yCoeff)
         }
         
         menuButton.snp.remakeConstraints { make in
             make.centerY.equalTo(nameButton.snp.centerY)
-            make.trailing.equalTo(snp.trailing).offset(-30)
-            make.height.width.equalTo(25)
+            make.trailing.equalTo(snp.trailing).offset(-30 * Constraint.xCoeff)
+            make.height.width.equalTo(25 * Constraint.yCoeff)
         }
+    }
+    
+    @objc func pressedMenuBar() {
+        delegate?.didPressMenuButton()
     }
 }

@@ -15,6 +15,7 @@ class EditProfileViewCell: UICollectionViewCell {
         view.setTitleColor(.black, for: .normal)
         view.backgroundColor = .systemGray6
         view.layer.cornerRadius = 8
+        view.addTarget(self, action: #selector(testPrint), for: .touchUpInside)
         return view
     }()
     
@@ -55,24 +56,28 @@ class EditProfileViewCell: UICollectionViewCell {
     
     private func setupConstraints() {
         editProfileButton.snp.remakeConstraints { make in
-            make.top.equalTo(snp.bottom)
-            make.leading.equalTo(snp.leading).offset(10)
-            make.height.equalTo(35)
-            make.width.equalTo(150)
+            make.centerY.equalTo(snp.centerY)
+            make.leading.equalTo(snp.leading).offset(10 * Constraint.xCoeff)
+            make.height.equalTo(35 * Constraint.yCoeff)
+            make.width.equalTo(150 * Constraint.xCoeff)
         }
         
         shareProfileButton.snp.remakeConstraints { make in
             make.centerY.equalTo(editProfileButton.snp.centerY)
-            make.leading.equalTo(editProfileButton.snp.trailing).offset(12)
-            make.height.equalTo(35)
-            make.width.equalTo(150)
+            make.leading.equalTo(editProfileButton.snp.trailing).offset(12 * Constraint.xCoeff)
+            make.height.equalTo(35 * Constraint.yCoeff)
+            make.width.equalTo(150 * Constraint.xCoeff)
         }
         
         discoverPeopleButton.snp.remakeConstraints { make in
             make.centerY.equalTo(editProfileButton.snp.centerY)
-            make.leading.equalTo(shareProfileButton.snp.trailing).offset(12)
-            make.height.equalTo(35)
-            make.width.equalTo(35)
+            make.leading.equalTo(shareProfileButton.snp.trailing).offset(12 * Constraint.xCoeff)
+            make.height.equalTo(35 * Constraint.yCoeff)
+            make.width.equalTo(35 * Constraint.xCoeff)
         }
+    }
+    
+    @objc func testPrint() {
+        print("Test--------------------------")
     }
 }

@@ -58,6 +58,8 @@ class MainBottomButtonView: UIView {
         super.init(frame: frame)
         setup()
         setupConstraints()
+        
+        backgroundColor = .white
     }
     
     required init?(coder: NSCoder) {
@@ -74,33 +76,34 @@ class MainBottomButtonView: UIView {
     
     private func setupConstraints() {
         homeButton.snp.remakeConstraints { make in
-            make.leading.equalTo(snp.leading).offset(32)
-            make.bottom.equalTo(snp.bottom).offset(-18)
-            make.height.width.equalTo(56)
+            make.centerY.equalTo(snp.centerY)
+            make.leading.equalTo(snp.leading).offset(32 * Constraint.xCoeff)
+            make.bottom.equalTo(snp.bottom).offset(-18 * Constraint.yCoeff)
+            make.height.width.equalTo(56 * Constraint.yCoeff)
         }
         
         searchButton.snp.remakeConstraints { make in
-            make.leading.equalTo(homeButton.snp.trailing).offset(10)
+            make.leading.equalTo(homeButton.snp.trailing).offset(10 * Constraint.xCoeff)
             make.centerY.equalTo(homeButton.snp.centerY)
-            make.height.width.equalTo(59)
+            make.height.width.equalTo(59 * Constraint.yCoeff)
         }
         
         plusButton.snp.remakeConstraints { make in
-            make.leading.equalTo(searchButton.snp.trailing).offset(10)
+            make.leading.equalTo(searchButton.snp.trailing).offset(10 * Constraint.xCoeff)
             make.centerY.equalTo(homeButton.snp.centerY)
-            make.height.width.equalTo(70)
+            make.height.width.equalTo(70 * Constraint.yCoeff)
         }
         
         videoButton.snp.remakeConstraints { make in
-            make.leading.equalTo(plusButton.snp.trailing).offset(10)
+            make.leading.equalTo(plusButton.snp.trailing).offset(10 * Constraint.xCoeff)
             make.centerY.equalTo(homeButton.snp.centerY)
-            make.height.width.equalTo(49)
+            make.height.width.equalTo(49 * Constraint.yCoeff)
         }
         
         profileButton.snp.remakeConstraints { make in
-            make.leading.equalTo(videoButton.snp.trailing).offset(10)
+            make.leading.equalTo(videoButton.snp.trailing).offset(10 * Constraint.xCoeff)
             make.centerY.equalTo(homeButton.snp.centerY)
-            make.height.width.equalTo(50)
+            make.height.width.equalTo(50 * Constraint.yCoeff)
         }
     }
     

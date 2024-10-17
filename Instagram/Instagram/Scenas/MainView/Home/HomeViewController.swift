@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class HomeViewController: UIViewController {
     private let fireBaseManager = FireBaseManager.shared
@@ -25,9 +26,9 @@ class HomeViewController: UIViewController {
         view.addSubview(logOutButton)
         
         logOutButton.snp.remakeConstraints { make in
-            make.top.equalTo(view.snp.top).offset(100)
-            make.leading.equalTo(view.snp.leading).offset(20)
-            make.height.width.equalTo(40)
+            make.top.equalTo(view.snp.top).offset(100 * Constraint.yCoeff)
+            make.leading.equalTo(view.snp.leading).offset(20 * Constraint.xCoeff)
+            make.height.width.equalTo(40 * Constraint.yCoeff)
         }
 
     }

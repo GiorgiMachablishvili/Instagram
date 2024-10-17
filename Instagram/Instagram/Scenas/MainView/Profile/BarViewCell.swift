@@ -51,7 +51,6 @@ class BarViewCell: UICollectionViewCell {
         super.init(frame: frame)
         setup()
         setupConstraints()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -63,32 +62,32 @@ class BarViewCell: UICollectionViewCell {
         addSubview(shareMomentsButton)
         addSubview(userPhotosAndVideosButton)
         addSubview(lineImage)
-        
     }
     
     private func setupConstraints() {
         postButton.snp.remakeConstraints { make in
-            make.top.equalTo(snp.bottom)
-            make.leading.equalTo(snp.leading).offset(50)
-            make.width.height.equalTo(50)
+            make.centerY.equalTo(snp.centerY)
+            make.leading.equalTo(snp.leading).offset(40 * Constraint.xCoeff)
+            make.width.height.equalTo(50 * Constraint.yCoeff)
+            
         }
         
         shareMomentsButton.snp.remakeConstraints { make in
             make.centerY.equalTo(postButton.snp.centerY)
-            make.leading.equalTo(postButton.snp.trailing).offset(70)
-            make.width.height.equalTo(30)
+            make.centerX.equalTo(snp.centerX)
+            make.width.height.equalTo(30 * Constraint.yCoeff)
         }
         
         userPhotosAndVideosButton.snp.remakeConstraints { make in
             make.centerY.equalTo(postButton.snp.centerY)
-            make.leading.equalTo(shareMomentsButton.snp.trailing).offset(70)
-            make.width.height.equalTo(50)
+            make.trailing.equalTo(snp.trailing).offset(-40 * Constraint.xCoeff)
+            make.width.height.equalTo(50 * Constraint.yCoeff)
         }
         
         lineImage.snp.remakeConstraints { make in
             make.leading.equalTo(snp.leading)
-            make.top.equalTo(postButton.snp.bottom)
-            make.width.equalTo(120)
+            make.top.equalTo(postButton.snp.bottom).offset(1)
+            make.width.equalTo(120 * Constraint.xCoeff)
             make.height.equalTo(1)
         }
     }
@@ -96,9 +95,9 @@ class BarViewCell: UICollectionViewCell {
     @objc func pressPostButton() {
         print("Pressed Post Button")
         lineImage.snp.remakeConstraints { make in
-            make.leading.equalTo(snp.leading)
+            make.centerX.equalTo(postButton.snp.centerX)
             make.top.equalTo(postButton.snp.bottom)
-            make.width.equalTo(120)
+            make.width.equalTo(130 * Constraint.xCoeff)
             make.height.equalTo(1)
         }
         UIView.animate(withDuration: 0.3) {
@@ -109,9 +108,9 @@ class BarViewCell: UICollectionViewCell {
     @objc func pressShareMomentsButton() {
         print("Pressed Share Moments Button")
         lineImage.snp.remakeConstraints { make in
-            make.leading.equalTo(snp.leading).offset(150)
+            make.centerX.equalTo(shareMomentsButton.snp.centerX)
             make.top.equalTo(postButton.snp.bottom)
-            make.width.equalTo(120)
+            make.width.equalTo(130 * Constraint.xCoeff)
             make.height.equalTo(1)
         }
         UIView.animate(withDuration: 0.3) {
@@ -122,9 +121,9 @@ class BarViewCell: UICollectionViewCell {
     @objc func pressUserPhotosAndVideosButton() {
         print("Pressed User Photos and Videos Button")
         lineImage.snp.remakeConstraints { make in
-            make.leading.equalTo(snp.leading).offset(300)
+            make.centerX.equalTo(userPhotosAndVideosButton.snp.centerX)
             make.top.equalTo(postButton.snp.bottom)
-            make.width.equalTo(120)
+            make.width.equalTo(130 * Constraint.xCoeff)
             make.height.equalTo(1)
         }
         UIView.animate(withDuration: 0.3) {

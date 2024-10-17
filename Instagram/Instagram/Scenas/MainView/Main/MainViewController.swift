@@ -49,8 +49,8 @@ class MainViewController: UIViewController, MainBottomButtonViewDelegate {
     private func setupConstraints() {
         mainBottomButtons.snp.remakeConstraints { make in
             make.leading.trailing.equalToSuperview()
-            make.bottom.equalTo(view.snp.bottom).offset(-14)
-            make.height.equalTo(50)
+            make.bottom.equalTo(view.snp.bottom)
+            make.height.equalTo(85 * Constraint.yCoeff)
         }
     }
     

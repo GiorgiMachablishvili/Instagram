@@ -17,6 +17,19 @@
 		E36618DF2CBEA872007CBD77 /* PostFollowersViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36618DE2CBEA872007CBD77 /* PostFollowersViewCell.swift */; };
 		E36618E12CBEAC9C007CBD77 /* EditProfileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36618E02CBEAC9C007CBD77 /* EditProfileViewCell.swift */; };
 		E36618E32CBEAED9007CBD77 /* BarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36618E22CBEAED9007CBD77 /* BarViewCell.swift */; };
+		E36C72FF2CC00CE4002303BD /* PostViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36C72FE2CC00CE4002303BD /* PostViewCell.swift */; };
+		E3A572532CC12A2C0000E11E /* ProfileMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A572522CC12A2C0000E11E /* ProfileMenuViewController.swift */; };
+		E3A572562CC136030000E11E /* CustomNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A572552CC136030000E11E /* CustomNavBarView.swift */; };
+		E3A5725A2CC13F950000E11E /* AccountsCenterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A572592CC13F950000E11E /* AccountsCenterViewCell.swift */; };
+		E3A5725C2CC15A910000E11E /* HowToUseInstagramViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A5725B2CC15A910000E11E /* HowToUseInstagramViewCell.swift */; };
+		E3A5725E2CC169D70000E11E /* Custom Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A5725D2CC169D70000E11E /* Custom Button.swift */; };
+		E3A572602CC1AB170000E11E /* HowOtherCanInteractWithYouViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A5725F2CC1AB170000E11E /* HowOtherCanInteractWithYouViewCell.swift */; };
+		E3A572622CC1AC220000E11E /* WhoCanSeeYourContentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A572612CC1AC220000E11E /* WhoCanSeeYourContentViewCell.swift */; };
+		E3A572642CC1B5B60000E11E /* WhatYouSeeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A572632CC1B5B60000E11E /* WhatYouSeeViewCell.swift */; };
+		E3A572662CC1B8D50000E11E /* YourAppAndMediaViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A572652CC1B8D50000E11E /* YourAppAndMediaViewCell.swift */; };
+		E3A572682CC1BB6A0000E11E /* BottomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A572672CC1BB6A0000E11E /* BottomViewCell.swift */; };
+		E3A5726A2CC1C0450000E11E /* ForFamilyViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A572692CC1C0440000E11E /* ForFamilyViewCell.swift */; };
+		E3A5726C2CC1C28C0000E11E /* ForProfessionalsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A5726B2CC1C28C0000E11E /* ForProfessionalsViewCell.swift */; };
 		E3B3F9512CB84CED001933BC /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B3F9502CB84CED001933BC /* SignUpViewModel.swift */; };
 		E3B3F9542CB85CB4001933BC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B3F9532CB85CB4001933BC /* MainViewController.swift */; };
 		E3B3F9562CB85D70001933BC /* MainBottomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B3F9552CB85D70001933BC /* MainBottomButtonView.swift */; };
@@ -97,6 +110,19 @@
 		E36618DE2CBEA872007CBD77 /* PostFollowersViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostFollowersViewCell.swift; sourceTree = "<group>"; };
 		E36618E02CBEAC9C007CBD77 /* EditProfileViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewCell.swift; sourceTree = "<group>"; };
 		E36618E22CBEAED9007CBD77 /* BarViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarViewCell.swift; sourceTree = "<group>"; };
+		E36C72FE2CC00CE4002303BD /* PostViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewCell.swift; sourceTree = "<group>"; };
+		E3A572522CC12A2C0000E11E /* ProfileMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuViewController.swift; sourceTree = "<group>"; };
+		E3A572552CC136030000E11E /* CustomNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBarView.swift; sourceTree = "<group>"; };
+		E3A572592CC13F950000E11E /* AccountsCenterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsCenterViewCell.swift; sourceTree = "<group>"; };
+		E3A5725B2CC15A910000E11E /* HowToUseInstagramViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseInstagramViewCell.swift; sourceTree = "<group>"; };
+		E3A5725D2CC169D70000E11E /* Custom Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Custom Button.swift"; sourceTree = "<group>"; };
+		E3A5725F2CC1AB170000E11E /* HowOtherCanInteractWithYouViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowOtherCanInteractWithYouViewCell.swift; sourceTree = "<group>"; };
+		E3A572612CC1AC220000E11E /* WhoCanSeeYourContentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhoCanSeeYourContentViewCell.swift; sourceTree = "<group>"; };
+		E3A572632CC1B5B60000E11E /* WhatYouSeeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatYouSeeViewCell.swift; sourceTree = "<group>"; };
+		E3A572652CC1B8D50000E11E /* YourAppAndMediaViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourAppAndMediaViewCell.swift; sourceTree = "<group>"; };
+		E3A572672CC1BB6A0000E11E /* BottomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomViewCell.swift; sourceTree = "<group>"; };
+		E3A572692CC1C0440000E11E /* ForFamilyViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForFamilyViewCell.swift; sourceTree = "<group>"; };
+		E3A5726B2CC1C28C0000E11E /* ForProfessionalsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForProfessionalsViewCell.swift; sourceTree = "<group>"; };
 		E3B3F9502CB84CED001933BC /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		E3B3F9532CB85CB4001933BC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E3B3F9552CB85D70001933BC /* MainBottomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBottomButtonView.swift; sourceTree = "<group>"; };
@@ -223,8 +249,35 @@
 				E36618DE2CBEA872007CBD77 /* PostFollowersViewCell.swift */,
 				E36618E02CBEAC9C007CBD77 /* EditProfileViewCell.swift */,
 				E36618E22CBEAED9007CBD77 /* BarViewCell.swift */,
+				E36C72FE2CC00CE4002303BD /* PostViewCell.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		E3A572512CC129CB0000E11E /* ProfileMenuButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				E3A572522CC12A2C0000E11E /* ProfileMenuViewController.swift */,
+				E3A572592CC13F950000E11E /* AccountsCenterViewCell.swift */,
+				E3A5725B2CC15A910000E11E /* HowToUseInstagramViewCell.swift */,
+				E3A572612CC1AC220000E11E /* WhoCanSeeYourContentViewCell.swift */,
+				E3A5725F2CC1AB170000E11E /* HowOtherCanInteractWithYouViewCell.swift */,
+				E3A572632CC1B5B60000E11E /* WhatYouSeeViewCell.swift */,
+				E3A572652CC1B8D50000E11E /* YourAppAndMediaViewCell.swift */,
+				E3A572692CC1C0440000E11E /* ForFamilyViewCell.swift */,
+				E3A5726B2CC1C28C0000E11E /* ForProfessionalsViewCell.swift */,
+				E3A572672CC1BB6A0000E11E /* BottomViewCell.swift */,
+			);
+			path = ProfileMenuButtonView;
+			sourceTree = "<group>";
+		};
+		E3A572542CC135D30000E11E /* Custom View */ = {
+			isa = PBXGroup;
+			children = (
+				E3A572552CC136030000E11E /* CustomNavBarView.swift */,
+				E3A5725D2CC169D70000E11E /* Custom Button.swift */,
+			);
+			path = "Custom View";
 			sourceTree = "<group>";
 		};
 		E3B3F9522CB85C88001933BC /* MainView */ = {
@@ -236,6 +289,7 @@
 				E33D2E7A2CB91F2800E10B10 /* Plus */,
 				E33D2E7C2CB91F5700E10B10 /* Video */,
 				E33D2E7D2CB91F6B00E10B10 /* Profile */,
+				E3A572512CC129CB0000E11E /* ProfileMenuButtonView */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -262,6 +316,7 @@
 				E3C7CD922CB6E1CC00B19E3C /* App */,
 				E3C7CDC52CB6E34400B19E3C /* Components */,
 				E3C7CD932CB6E1FF00B19E3C /* Scenas */,
+				E3A572542CC135D30000E11E /* Custom View */,
 				E3C7CD8D2CB6E16100B19E3C /* Managers */,
 				E3C7CDD22CB6ED9E00B19E3C /* Models */,
 				E3C7CD8A2CB6E13B00B19E3C /* Constraints */,
@@ -486,17 +541,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3A572532CC12A2C0000E11E /* ProfileMenuViewController.swift in Sources */,
+				E3A572562CC136030000E11E /* CustomNavBarView.swift in Sources */,
+				E3A572602CC1AB170000E11E /* HowOtherCanInteractWithYouViewCell.swift in Sources */,
 				E3C7CD7E2CB6DDA600B19E3C /* SignUpViewController.swift in Sources */,
 				E3B3F9562CB85D70001933BC /* MainBottomButtonView.swift in Sources */,
 				E3C7CD5D2CB6DC8100B19E3C /* Instagram.xcdatamodeld in Sources */,
 				E33D2E772CB907AB00E10B10 /* ImagePickerUtility.swift in Sources */,
+				E3A5725C2CC15A910000E11E /* HowToUseInstagramViewCell.swift in Sources */,
 				E3C7CDC72CB6E35500B19E3C /* MyTextFiledView.swift in Sources */,
+				E3A572662CC1B8D50000E11E /* YourAppAndMediaViewCell.swift in Sources */,
 				E3C7CD8C2CB6E14B00B19E3C /* Constraints.swift in Sources */,
+				E3A572642CC1B5B60000E11E /* WhatYouSeeViewCell.swift in Sources */,
 				E33D2E872CB91FF300E10B10 /* ProfileViewController.swift in Sources */,
 				E3C7CD6C2CB6DD0700B19E3C /* LaunchView.swift in Sources */,
 				E3C7CD802CB6DE9A00B19E3C /* SignInViewController.swift in Sources */,
 				E36618E12CBEAC9C007CBD77 /* EditProfileViewCell.swift in Sources */,
 				E3DC37A32CBD0A63000633A4 /* ProfileData.swift in Sources */,
+				E3A5726A2CC1C0450000E11E /* ForFamilyViewCell.swift in Sources */,
 				E3C7CDD42CB6EDB000B19E3C /* User.swift in Sources */,
 				E3B3F9542CB85CB4001933BC /* MainViewController.swift in Sources */,
 				E36618DF2CBEA872007CBD77 /* PostFollowersViewCell.swift in Sources */,
@@ -508,13 +570,19 @@
 				E33D2E832CB91FDB00E10B10 /* PlusViewController.swift in Sources */,
 				E3C7CD532CB6DC8100B19E3C /* AppDelegate.swift in Sources */,
 				E33D2E812CB91FD100E10B10 /* SearchViewController.swift in Sources */,
+				E3A5725A2CC13F950000E11E /* AccountsCenterViewCell.swift in Sources */,
 				E33D2E7F2CB91FC200E10B10 /* HomeViewController.swift in Sources */,
+				E3A5726C2CC1C28C0000E11E /* ForProfessionalsViewCell.swift in Sources */,
+				E3A572622CC1AC220000E11E /* WhoCanSeeYourContentViewCell.swift in Sources */,
 				E33D2E852CB91FE500E10B10 /* VideoViewController.swift in Sources */,
+				E36C72FF2CC00CE4002303BD /* PostViewCell.swift in Sources */,
 				E3B3F9582CB8621C001933BC /* SignInViewModel.swift in Sources */,
 				E36618DD2CBEA28A007CBD77 /* ProfileViewCell.swift in Sources */,
 				E3C7CD822CB6DFAF00B19E3C /* UIFont+Extantion.swift in Sources */,
 				E3C7CDC92CB6E35F00B19E3C /* MyLabel.swift in Sources */,
+				E3A5725E2CC169D70000E11E /* Custom Button.swift in Sources */,
 				E3C7CD552CB6DC8100B19E3C /* SceneDelegate.swift in Sources */,
+				E3A572682CC1BB6A0000E11E /* BottomViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
